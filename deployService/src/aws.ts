@@ -7,7 +7,7 @@ import path from "path";
 const accessKeyId = process.env.ACCESS;
 const secretAccessKey = process.env.SECRET;
 const endpoint = process.env.ENDPOINT;
-const bucket = process.env.BUCKET;
+const bucket: string = process.env.BUCKET ?? "";
 
 if (!accessKeyId || !secretAccessKey || !endpoint || !bucket) {
     throw new Error("Missing required environment variables");
