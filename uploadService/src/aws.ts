@@ -15,7 +15,8 @@ if (!accessKeyId || !secretAccessKey || !endpoint || !bucket) {
 const s3 = new S3({
     accessKeyId,
     secretAccessKey,
-    endpoint
+    endpoint,
+    s3ForcePathStyle: true
 })
 
 export const uploadFile = async (fileName:string,localFilePath:string)=>{

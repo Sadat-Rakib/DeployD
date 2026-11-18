@@ -13,7 +13,7 @@ if (!accessKeyId || !secretAccessKey || !endpoint || !bucket) {
     throw new Error("Missing required environment variables");
 }
 
-const s3 = new S3({accessKeyId,secretAccessKey,endpoint})
+const s3 = new S3({accessKeyId,secretAccessKey,endpoint, s3ForcePathStyle: true})
 // output/asdasd
 export async function downloadS3Folder(prefix: string) {
     const allFiles = await s3.listObjectsV2({
